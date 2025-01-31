@@ -42,8 +42,9 @@ python upload_script.py <file_name> <api_key> [--sni-hostname <hostname>]
 
 ### Arguments:
 - `file_name`: The name of the local file you want to upload.
-- `api_key`: Your Pixeldrain API key (obtainable from your Pixeldrain account).
+- `api_key`: Your Pixeldrain API key (obtainable from your Pixeldrain account). API key can be set as an environment variable `PDUP_API_KEY`.
 - `--sni-hostname` (optional): The hostname to use for the SNI field. Default is `pixeldrain.net`.
+
 
 ---
 

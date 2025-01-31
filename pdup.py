@@ -77,7 +77,8 @@ def main():
     
     parser.add_argument(
         "api_key",
-        help="Your Pixeldrain API key (get it from your Pixeldrain account).",
+        help="""Your Pixeldrain API key (get it from your Pixeldrain account).
+        You can also set the environment variable 'PDUP_API_KEY' instead of passing it as an argument.""",
     )
     parser.add_argument(
         "--sni-hostname",
@@ -91,7 +92,8 @@ def main():
         print(f"ERROR: File '{args.file_name}' does not exist.")
         return
 
-    upload_file_to_pixeldrain(args.file_name, args.api_key, args.sni_hostname)
+    api_key = args.api_key if args.api_key else os.getenv("PDUP_API_KEY")
+    upload_file_to_pixeldrain(args.file_name, api_key, args.sni_hostname)
 
 
 if __name__ == "__main__":
